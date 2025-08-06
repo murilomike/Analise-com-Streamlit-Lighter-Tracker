@@ -19,14 +19,14 @@ st.write("Análise demográfica e comportamental dos usuários de isqueiros.")
 @st.cache_data
 def carregar_dados():
     try:
-        df = pd.read_csv("df_perfil.csv")
+        df = pd.read_csv("bases_sistema_usuario/df_perfil.csv")
         return df
     except FileNotFoundError:
         st.error("Arquivo 'df_perfil.csv' não encontrado. Verifique se o arquivo está no diretório correto.")
         return None
 
-df_perfil = carregar_dados()
 
+df_perfil = carregar_dados()
 
 if df_perfil is not None:
     # Filtros interativos na barra lateral
